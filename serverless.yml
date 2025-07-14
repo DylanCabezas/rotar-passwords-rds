@@ -1,0 +1,19 @@
+org: dylancabezas
+service: rotar-passwords-rds
+
+provider:
+  name: aws
+  runtime: python3.13
+  region: us-east-1
+  timeout: 20
+  memorySize: 128
+  iam:
+    role: arn:aws:iam::744127473797:role/LabRole
+  environment:
+    ADMIN_PASSWORD_PARAM: /rds_mysql_alumnos/admin/password
+
+functions:
+  rotar:
+    handler: RotarPasswordUsuarios.lambda_handler
+    events:
+      - schedule: rate(10 minutes)  # Ejecutar cada 10 minutos
