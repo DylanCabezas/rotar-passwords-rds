@@ -72,7 +72,9 @@ cat response.json
 Para ver el cambio de password:
 
 AWS Secrets Manager -> Secretos -> dev/alumnos -> Descripción General -> Valor del Secreto
+
 AWS Secrets Manager -> Secretos -> prod/alumnos -> Descripción General -> Valor del Secreto
+
 AWS Secrets Manager -> Secretos -> test/alumnos -> Descripción General -> Valor del Secreto
 
 
